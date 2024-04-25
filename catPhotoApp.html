@@ -1,3 +1,5 @@
+<!--Check older commits for older comments-->
+
 <html>
 
 <body>
@@ -47,24 +49,26 @@
       </figure>
     </section>
     <section>
-      <h2>Cat Form</h2>
-      <!--Web form to collect information from users.-->
-      <!--action attribute indicates where form data should be sent.-->
-      <form action="https://freecatphotoapp.com/submit-cat-photo">
-        <!--input element allows you several ways to collect data from a web form.-->
-        <!--In order for a form's data to be accessed by the location specified in the action attribute, you must give the text field a name attribute and assign it a value to represent the data being submitted.-->
-        <!--You can use radio buttons for questions where you want only one answer out of multiple options.-->
-        <!--label element makes the text with the button associate with the button (text becomes clickable).-->
-        <!--id attribute is used to identify specific HTML elements. Each id attribute's value must be unique from all other id values for the entire page.-->
-        <!--name attribute is used to make only one button to be selected at a time. (You need to give the same name value to all buttons here for it).-->
-        <!--value attribute is needed to distinguish between buttons as the other attribute, 'name' have same value for multiple buttons here.-->
-        <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
-        <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
 
-        <!--Placeholder text is used to give people a hint about what kind of information to enter into an input.-->
-        <!--To prevent a user from submitting your form when required information is missing, you need to add the required attribute to an input element. There's no need to set a value to the required attribute. Instead, just add the word required to the input element, making sure there is space between it and other attributes.-->
-        <input type="text" placeholder="cat photo URL" name="catphotourl" required>
-        <!--button creates a clickable button.-->
+      <h2>Cat Form</h2>
+      <form action="https://freecatphotoapp.com/submit-cat-photo">
+        <!--The fieldset element is used to group related inputs and labels together in a web form.-->
+        <fieldset>
+          <!--The legend element acts as a caption for the content in the fieldset element. It gives users context about what they should enter into that part of the form.-->
+          <legend>Is your cat an indoor or outdoor cat?</legend>
+          <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor"> Indoor</label>
+          <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+        </fieldset>
+        <fieldset>
+          
+          <legend>What's your cat's personality?</legend>
+          <!--Forms commonly use checkboxes for questions that may have more than one answer. -->
+          <!--There's another way to associate an input element's text with the element itself. You can nest the text within a label element and add a for attribute with the same value as the input element's id attribute.-->
+          <input id="loving" type="checkbox" name="personality"> <label for="loving">Loving</label>
+          <input id="lazy" type="checkbox" name="personality"> <label for="lazy">Lazy</label>
+          <input id="energetic" type="checkbox" name="personality"> <label for="energetic"> Energetic</label>
+        </fieldset>
+        <input type="text" name="catphotourl" placeholder="cat photo URL" required>
         <button type="submit">Submit</button>
       </form>
     </section>
@@ -72,4 +76,3 @@
 </body>
 
 </html>
-
